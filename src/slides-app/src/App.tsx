@@ -1,10 +1,7 @@
-import PresentationPage from "./app/page";
+import PresentationPage from './app/page'
 
 function App() {
-
-  return (
-      <PresentationPage></PresentationPage>
-  )
+  return <PresentationPage></PresentationPage>
 }
 
 export default App

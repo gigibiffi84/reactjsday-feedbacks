@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState, useCallback } from "react"
+import { useState, useCallback } from 'react'
 
 export interface UseStepperReturn {
   currentStep: number
@@ -12,7 +12,10 @@ export interface UseStepperReturn {
   isLastStep: boolean
 }
 
-export function useStepper(totalSteps: number, initialStep = 0): UseStepperReturn {
+export function useStepper(
+  totalSteps: number,
+  initialStep = 0
+): UseStepperReturn {
   const [currentStep, setCurrentStep] = useState(initialStep)
 
   const goToStep = useCallback(
@@ -21,7 +24,7 @@ export function useStepper(totalSteps: number, initialStep = 0): UseStepperRetur
         setCurrentStep(step)
       }
     },
-    [totalSteps],
+    [totalSteps]
   )
 
   const nextStep = useCallback(() => {

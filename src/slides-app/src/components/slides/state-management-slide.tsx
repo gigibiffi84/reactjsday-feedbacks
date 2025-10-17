@@ -1,14 +1,17 @@
-"use client"
+'use client'
 
-import { Card } from "@/components/ui/card"
+import { Card } from '@/components/ui/card'
 
 export function StateManagementSlide() {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h2 className="text-4xl font-bold text-balance">Local State Management</h2>
+        <h2 className="text-4xl font-bold text-balance">
+          Local State Management
+        </h2>
         <p className="text-lg text-muted-foreground">
-          Avoid components with too many props by using local state and composition
+          Avoid components with too many props by using local state and
+          composition
         </p>
       </div>
 
@@ -81,8 +84,9 @@ export function StateManagementSlide() {
       <div className="bg-accent/50 p-6 rounded-lg border border-border">
         <h3 className="font-semibold mb-2">Key Takeaway</h3>
         <p className="text-sm text-muted-foreground">
-          Keep state close to where it's used. If multiple fields are related, group them into a single state object
-          instead of passing dozens of individual props.
+          Keep state close to where it's used. If multiple fields are related,
+          group them into a single state object instead of passing dozens of
+          individual props.
         </p>
       </div>
     </div>
