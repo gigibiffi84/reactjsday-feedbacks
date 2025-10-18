@@ -12,7 +12,7 @@ export const slideQAs = [
         'Most applications load needed and shared libraries on bootstrap in a single vendor chunk.',
       takeaway: 'Use vite to handle code splitting',
     },
-  ],
+  ], //bundlers
   [
     {
       question:
@@ -22,16 +22,27 @@ export const slideQAs = [
       takeaway:
         "Use husky if you want to save time (costs) on PR pipelines, Don't write too many e2e tests, prefer to use unit tests",
     },
-  ],
+  ], //testing
   [
     {
       question:
-        "It's correct to diffentiate between presentation components and smart component whe using local state?",
+        "It's correct to separate between presentation components and smart component whe using local state?",
       answer:
         'It is absolutely still correct and useful to differentiate between presentation (dumb) components and container (smart) components even when only using local state.The distinction is not about where the state comes from (local vs. global), but who owns the logic for that state.',
       takeaway:
         "Don't use local state for presentation components, break global state in smaller pieces, use smart components together with tanstack query to avoid data mishandling",
     },
-  ],
-  [],
+  ], // state management
+  [], //modularization
+  [
+    {
+      question:
+        'Is there a way to keep track of the number of components that the compiler is unable to optimize? ',
+      answer:
+        "Yes but it can't say which components was not transpiled by the react-compiler so you should look at eslint reporting.",
+      takeaway:
+        "It's not black magic, the transpiler is a great feature and nobody expects that works immediately infact React team provided a lot of tools for incremental adoption",
+    },
+  ], //react compiler
+  [], //form performance
 ]
