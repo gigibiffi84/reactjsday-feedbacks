@@ -1,4 +1,4 @@
-import PresentationPage from './app/page'
+import PresentationPage from './app/reactjsday2025-presentation'
 
 function App() {
   return <PresentationPage></PresentationPage>

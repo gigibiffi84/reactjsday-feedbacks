@@ -1,3 +1,59 @@
+type Block = {
+  title: string
+  description: string
+  image?: string
+  imageAlt?: string
+  imagePosition?: 'left' | 'right'
+}
+
+export type IntroSlideProps = {
+  blocks: Block[]
+}
+
+const blocks = [
+  {
+    title: 'React bundlers',
+    description: 'A reverse engineering of javascript bundler and how it works',
+    image: '/images/state-management.png',
+    imageAlt: 'State Management Diagram',
+    imagePosition: 'left',
+  },
+  {
+    title: 'React From Unit to E2E: Crafting a Bulletproof testing pipeline',
+    description: 'A multi-layered testing pipeline from unit tests to E2E ',
+    image: '/images/state-management.png',
+    imageAlt: 'State Management Diagram',
+    imagePosition: 'left',
+  },
+  {
+    title: 'State Management',
+    description: 'Avoid prop drilling and manage local state effectively',
+    image: '/images/state-management.png',
+    imageAlt: 'State Management Diagram',
+    imagePosition: 'left',
+  },
+  {
+    title: 'Modularization',
+    description: 'Scale up to over 15+ teams ',
+    image: '/images/state-management.png',
+    imageAlt: 'State Management Diagram',
+    imagePosition: 'left',
+  },
+  {
+    title: 'React Compiler',
+    description: 'Understand when automatic memoization fails',
+    image: '/images/compiler.png',
+    imageAlt: 'React Compiler Diagram',
+    imagePosition: 'right',
+  },
+  {
+    title: 'Form Performance',
+    description: 'Use useTransition to prevent UI freezing',
+    image: '/images/form-performance.png',
+    imageAlt: 'Form Performance Diagram',
+  },
+]
+
 export function IntroSlide() {
   return (
     <div className="space-y-8">
@@ -11,24 +67,23 @@ export function IntroSlide() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-3 mt-12">
-        <div className="p-6 rounded-lg border border-border bg-card">
-          <h3 className="font-semibold mb-2">State Management</h3>
-          <p className="text-sm text-muted-foreground">
-            Avoid prop drilling and manage local state effectively
-          </p>
-        </div>
-        <div className="p-6 rounded-lg border border-border bg-card">
-          <h3 className="font-semibold mb-2">React Compiler</h3>
-          <p className="text-sm text-muted-foreground">
-            Understand when automatic memoization fails
-          </p>
-        </div>
-        <div className="p-6 rounded-lg border border-border bg-card">
-          <h3 className="font-semibold mb-2">Form Performance</h3>
-          <p className="text-sm text-muted-foreground">
-            Use useTransition to prevent UI freezing
-          </p>
-        </div>
+        {blocks.map((block) => (
+          <div
+            key={block.title}
+            className="p-6 rounded-lg border border-border bg-card"
+          >
+            <h3 className="font-semibold mb-2">{block.title}</h3>
+            <p className="text-sm text-muted-foreground">{block.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="grid gap-4 md:grid-cols-3 mt-12">
+        Speakers: Edoardo Dusi (bundlers), Luca Del Puppo (compiler), Leonardo
+        Montini (tanstack-router), Javonne Cameron (state management), Ludovico
+        Besana (testing), Yakitta (Form Performance)
+      </div>
+      <div className="grid gap-4 md:grid-cols-3 mt-12">
+        Master of Ceromonies: Giuseppe Funiciello
       </div>
     </div>
   )

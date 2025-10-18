@@ -1,40 +1,60 @@
 'use client'
 
 import { Card } from '@/components/ui/card'
+import { KeyTakeawayComp } from '../KeyTaskeawyComp'
+import { SlideLayout } from '../SlideLayout'
 
-export function StateManagementSlide() {
+const goodSmartComp = `function UserForm({
+  userId,   
+  onUserDataChange
+}) {
+  
+  /*load and set user data using userId lookup with tanstack query*/
+  
+  const handleUserFirstNameChange  = useCallback((sourceField, data)=>{ ... }, [userId])
+  
   return (
-    <div className="space-y-8">
-      <div className="space-y-4">
-        <h2 className="text-4xl font-bold text-balance">
-          Local State Management
-        </h2>
-        <p className="text-lg text-muted-foreground">
-          Avoid components with too many props by using local state and
-          composition
-        </p>
-      </div>
+    <div>
+      <MetadataForm 
+        formData={userData}
+        onFormDataChange={onUserDataChange}
+        onFieldChange={handleUserFirstNameChange}
+      />
+      {/* More fields... */}
+    </div>
+  )
+}`
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Bad Example */}
-        <Card className="p-6 border-destructive/50">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-destructive font-semibold">❌ Bad</span>
-          </div>
-          <pre className="text-sm bg-muted p-4 rounded-md overflow-x-auto">
-            <code>{`function UserProfile({
+const goodPresentationComp = `function MetadataForm({
+  entityKey,
+  formData,
+  onFormDataChange  
+   // ... 10+ it's ok when the component is dumb  
+  onFieldChange,
+}) {
+  
+  //no inner local state only derived state
+  
+  // no need to useEffect to rerender, a presentation component state can be derived by its props!!
+  
+  return (
+    <div>       
+      {/* For each field in metadata 
+      render the proper form field... */}
+    </div>
+  )
+}`
+
+const badComp = `function UserProfile({
   name,
   email,
   avatar,
   bio,
   location,
-  website,
-  twitter,
-  github,
+   // ... 10+ more props
   onNameChange,
   onEmailChange,
   onBioChange,
-  // ... 10+ more props
 }) {
   return (
     <div>
@@ -45,17 +65,9 @@ export function StateManagementSlide() {
       {/* More fields... */}
     </div>
   )
-}`}</code>
-          </pre>
-        </Card>
+}`
 
-        {/* Good Example */}
-        <Card className="p-6 border-primary/50">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-primary font-semibold">✓ Good</span>
-          </div>
-          <pre className="text-sm bg-muted p-4 rounded-md overflow-x-auto">
-            <code>{`function UserProfile({ userId }) {
+const goodComp = `function UserProfile({ userId }) {
   const [profile, setProfile] = 
     useState(initialProfile)
   
@@ -76,19 +88,84 @@ export function StateManagementSlide() {
       />
     </div>
   )
-}`}</code>
+}`
+export function StateManagementSlide() {
+  return (
+    <SlideLayout
+      title={'React state management scopes'}
+      description={'How to address state to the correct scope'}
+    >
+      <ul className={'list-disc ml-6 mt-1'}>
+        <li>Scope types: local, global, server</li>
+        <li>
+          Local: cons props drilling, solution useContext or Component redesign
+        </li>
+        <li>
+          Global: cons state bloat, use slices of state with smaller context
+        </li>
+        <li>Server state: stale data, ok we use tanstack query &#128515;</li>
+        <li>
+          Smart Components VS Presentation/Dumb components, check Atomic Design
+          Talk &#128540;
+        </li>
+        <li>
+          Useful links or books:{' '}
+          <a
+            className={'text-green-800'}
+            href={'/state-management-cheatsheet.pdf'}
+          >
+            State management cheatsheet
+          </a>
+        </li>
+      </ul>
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Bad Example */}
+        <Card className="p-6 border-destructive/50">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-destructive font-semibold">❌ Bad</span>
+          </div>
+          <pre className="text-sm bg-muted p-4 rounded-md overflow-x-auto">
+            <code>{badComp}</code>
+          </pre>
+        </Card>
+
+        {/* Good Example */}
+        <Card className="p-6 border-primary/50">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-primary font-semibold">✓ Good</span>
+          </div>
+          <pre className="text-sm bg-muted p-4 rounded-md overflow-x-auto">
+            <code>{goodComp}</code>
+          </pre>
+        </Card>
+      </div>
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Bad Example */}
+        <Card className="p-6 border-destructive/50">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-primary font-semibold">✓ Good</span>
+          </div>
+          <pre className="text-sm bg-muted p-4 rounded-md overflow-x-auto">
+            <code>{goodPresentationComp}</code>
+          </pre>
+        </Card>
+
+        {/* Good Example */}
+        <Card className="p-6 border-primary/50">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-primary font-semibold">✓ Good</span>
+          </div>
+          <pre className="text-sm bg-muted p-4 rounded-md overflow-x-auto">
+            <code>{goodSmartComp}</code>
           </pre>
         </Card>
       </div>
 
-      <div className="bg-accent/50 p-6 rounded-lg border border-border">
-        <h3 className="font-semibold mb-2">Key Takeaway</h3>
-        <p className="text-sm text-muted-foreground">
-          Keep state close to where it's used. If multiple fields are related,
-          group them into a single state object instead of passing dozens of
-          individual props.
-        </p>
-      </div>
-    </div>
+      <KeyTakeawayComp
+        desc={
+          "Honor this best practice it's a first step to start respect the rules of react compiler"
+        }
+      ></KeyTakeawayComp>
+    </SlideLayout>
   )
 }

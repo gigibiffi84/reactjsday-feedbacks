@@ -1,9 +1,11 @@
 'use client'
 
-import type { ReactNode } from 'react'
+import { type ReactNode, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, MessageSquare } from 'lucide-react'
 import type { UseStepperReturn } from '@/hooks/use-stepper'
+import { slideQAs } from '../app/q_and_a'
+import { QADrawer } from './qa-drawer'
 
 interface PresentationLayoutProps {
   stepper: UseStepperReturn
@@ -22,6 +24,7 @@ export function PresentationLayout({
     isFirstStep,
     isLastStep,
   } = stepper
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   return (
     <div className="h-screen bg-background flex flex-col">
@@ -29,7 +32,8 @@ export function PresentationLayout({
       <header className="border-b border-border bg-card">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-semibold text-foreground">
-            React Best Practices
+            Reactjsday Conference 2025 - Verona: Infominds (L. Bifulco, V. Rigo,
+            R. Tosarello, A. Untertrifaller)
           </h1>
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
@@ -73,6 +77,23 @@ export function PresentationLayout({
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
+            {/* Q&A Button */}
+            <Button
+              variant="default"
+              size="lg"
+              onClick={() => setIsDrawerOpen(true)}
+              className="gap-2"
+            >
+              <MessageSquare className="h-5 w-5" />
+              Questions & Answers
+            </Button>
+            {/* Q&A Drawer */}
+            <QADrawer
+              open={isDrawerOpen}
+              onOpenChange={setIsDrawerOpen}
+              questions={slideQAs[currentStep] || []}
+              slideNumber={currentStep + 1}
+            />
           </div>
 
           <Button
