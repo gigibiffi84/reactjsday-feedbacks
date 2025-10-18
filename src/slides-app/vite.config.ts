@@ -12,13 +12,13 @@ export default defineConfig({
           [
             'babel-plugin-react-compiler',
             {
-              compilationMode: 'annotation', // or 'annotation', 'syntax', 'all'
+              compilationMode: 'all', // or 'annotation', 'syntax', 'all'
               logger: {
                 logEvent(filename: never, event: { kind: never }) {
                   console.log(`[Compiler] ${event.kind}: ${filename}`)
                 },
               },
-              panicThreshold: 'critical_errors', //none Skip components with errors instead of failing the build
+              panicThreshold: 'none', //critical_errors OR none Skip components with errors instead of failing the build
             },
           ],
         ],

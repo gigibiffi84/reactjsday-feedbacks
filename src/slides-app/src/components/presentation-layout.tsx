@@ -16,6 +16,7 @@ export function PresentationLayout({
   stepper,
   children,
 }: PresentationLayoutProps) {
+  'use memo'
   const {
     currentStep,
     totalSteps,

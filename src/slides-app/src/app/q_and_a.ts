@@ -44,5 +44,6 @@ export const slideQAs = [
         "It's not black magic, the transpiler is a great feature and nobody expects that works immediately infact React team provided a lot of tools for incremental adoption",
     },
   ], //react compiler
+  [],
   [], //form performance
 ]

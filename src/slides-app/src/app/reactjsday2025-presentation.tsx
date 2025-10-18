@@ -29,7 +29,7 @@ const slides = [
 ]
 
 export default function PresentationPage() {
-  'use memo' // <-- Explicitly opts this component into compilation
+  'use memo'
   const [slideConf, setSlideConf] = useState(slides)
   const stepper = useStepper(slideConf.length)
 

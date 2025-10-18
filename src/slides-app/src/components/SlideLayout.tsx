@@ -8,6 +8,7 @@ export const SlideLayout = ({
   description,
   children,
 }: SlideLayoutProps) => {
+  'use memo'
   return (
     <>
       <div className="space-y-8">
