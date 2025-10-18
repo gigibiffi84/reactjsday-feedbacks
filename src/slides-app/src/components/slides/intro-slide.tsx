@@ -58,9 +58,7 @@ export function IntroSlide() {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h2 className="text-5xl font-bold text-balance">
-          React Best Practices
-        </h2>
+        <h2 className="text-5xl font-bold text-balance">Intro</h2>
         <p className="text-xl text-muted-foreground text-balance">
           Learn how to write better React code and avoid common mistakes
         </p>

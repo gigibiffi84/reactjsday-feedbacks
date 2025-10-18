@@ -30,11 +30,9 @@ export function SummarySlide() {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h2 className="text-4xl font-bold text-balance">
-          Summary: React Best Practices
-        </h2>
+        <h2 className="text-4xl font-bold text-balance">Summary</h2>
         <p className="text-lg text-muted-foreground">
-          Key takeaways for writing better React code
+          Key takeaways after the conference
         </p>
       </div>
 
