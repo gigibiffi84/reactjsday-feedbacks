@@ -4,24 +4,26 @@ import { CheckCircle2 } from 'lucide-react'
 export function SummarySlide() {
   const tips = [
     {
-      title: 'Keep State Local',
+      title: 'Keep in mind different state scopes and Component Types',
       description:
-        "Avoid prop drilling by managing state close to where it's used. Group related fields into objects.",
+        'Presentation Components, Smart Components, and Container Components are all different types of components. Keep them in different files and folders.',
+    },
+    {
+      title:
+        'Find your quality gates in every layer of your development process ',
+      description:
+        'Testing pipelines are expensive so use more unit tests that are fast and when automate test execution report and collect failures to gain useful insights.',
     },
     {
       title: 'Watch Object References',
       description:
-        "React Compiler can't prevent new object/array references from causing re-renders. Use useMemo/useCallback when needed.",
+        "React Compiler can't prevent new object/array references from causing re-renders. Use useMemo/useCallback when needed." +
+        'Use opt in/opt out policies to honor incremental adoption',
     },
     {
-      title: 'Use Transitions for Heavy Updates',
+      title: 'Use Transitions for Heavy Updates (not only in forms...)',
       description:
         'Wrap expensive state updates in startTransition to keep your UI responsive and prevent form freezing.',
-    },
-    {
-      title: 'Composition Over Props',
-      description:
-        'Instead of passing many props, compose smaller components that manage their own state.',
     },
   ]
 
