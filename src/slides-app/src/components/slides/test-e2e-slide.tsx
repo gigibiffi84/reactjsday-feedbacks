@@ -8,8 +8,8 @@ export const TestE2eSlide = () => (
     description={'How to structure your testing investment'}
   >
     <p>
-      To correctly structure your testing investment, you should use Mike Cohn's
-      Test Pyramid.
+      To correctly structure your testing investment, you should use Mike
+      Cohn&#39;s Test Pyramid.
     </p>
     <img
       className={'rounded-lg w-[400px] h-[300px]'}
@@ -31,12 +31,12 @@ export const TestE2eSlide = () => (
         </li>
         <li>
           {' '}
-          It's important to collect metrics during text execution to have the
-          correct ROI
+          It&#39;s important to collect metrics during text execution to have
+          the correct ROI
         </li>
         <li>
           To address and intercept problems effectively, you must implement more
-          quality gates at each level. The local workstation shouldn't be
+          quality gates at each level. The local workstation shouldn&#39;t be
           excluded; use tools like Husky to enforce standards.
         </li>
         <li>

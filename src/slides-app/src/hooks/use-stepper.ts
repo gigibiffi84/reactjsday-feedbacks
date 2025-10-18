@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react'
 
-export interface UseStepperReturn {
+export type UseStepperReturn = {
   currentStep: number
   totalSteps: number
   goToStep: (step: number) => void

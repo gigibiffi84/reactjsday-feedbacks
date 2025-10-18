@@ -7,7 +7,7 @@ import type { UseStepperReturn } from '@/hooks/use-stepper'
 import { slideQAs } from '../app/q_and_a'
 import { QADrawer } from './qa-drawer'
 
-interface PresentationLayoutProps {
+type PresentationLayoutProps = {
   stepper: UseStepperReturn
   children: ReactNode
 }

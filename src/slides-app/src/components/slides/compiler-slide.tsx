@@ -10,8 +10,8 @@ export function CompilerSlide() {
           When React Compiler Fails
         </h2>
         <p className="text-lg text-muted-foreground">
-          The React Compiler can't optimize everything - here's what to watch
-          for
+          The React Compiler can&#39;t optimize everything - here&#39;s what to
+          watch for
         </p>
       </div>
 
@@ -20,8 +20,8 @@ export function CompilerSlide() {
         <li>
           We initially believed it was magic, but, to be more pragmatic, this
           represents a new approach to developing React applications. Therefore,
-          we must be aware of the compiler's limitations regarding code written
-          before the stable release
+          we must be aware of the compiler&#39;s limitations regarding code
+          written before the stable release
         </li>
         <li>
           Check libraries: react-compiler-healthcheck
@@ -131,7 +131,7 @@ function UserList() {
       <div className="bg-accent/50 p-6 rounded-lg border border-border">
         <h3 className="font-semibold mb-2">Key Takeaway</h3>
         <p className="text-sm text-muted-foreground">
-          The React Compiler optimizes component re-renders, but it can't
+          The React Compiler optimizes component re-renders, but it can&#39;t
           prevent new object/function references from causing child re-renders.
           Use useMemo and useCallback for props passed to optimized children.
         </p>

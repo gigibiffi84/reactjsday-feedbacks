@@ -58,6 +58,30 @@ export function SummarySlide() {
           Keep learning and building better React applications
         </p>
       </div>
+      <div className={'grid gap-1 md:grid-cols-1 mt-1'}>
+        <p>Links to the video complete vide talks</p>
+        <span>
+          <a
+            className={'underline'}
+            href="https://youtube.com/live/Bnj3D03Qzqc"
+          >
+            Track 1
+          </a>
+        </span>
+        <span>
+          <a
+            className={'underline'}
+            href="https://youtube.com/live/x9fvrjg0f-g"
+          >
+            Track 2
+          </a>
+        </span>
+      </div>
+      <div className="grid gap-4 md:grid-cols-3 mt-12">
+        <a className={'underline'} href={'https://www.reactjsday.it/speakers/'}>
+          Speakers
+        </a>
+      </div>
     </div>
   )
 }

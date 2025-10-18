@@ -22,10 +22,10 @@ export const ModularizationSlide = () => (
         </li>
         <li> We rely on code generator templates</li>
         <li>
-          For mobile apps deploy insted of generate at runtime it's recommended
-          to generate at runtime to avoid to do a release on store every time
-          you change something. Mobile Deploy is not really fast like normal Web
-          apps
+          For mobile apps deploy insted of generate at runtime it&#39;s
+          recommended to generate at runtime to avoid to do a release on store
+          every time you change something. Mobile Deploy is not really fast like
+          normal Web apps
         </li>
       </ul>
     </p>
@@ -33,8 +33,9 @@ export const ModularizationSlide = () => (
     <ul className={'list-disc ml-6 mt-1'}>
       <li>Documentation is important</li>
       <li>
-        Mindset: It's important that each team conducts information gathering to
-        prevent the reinvention of the wheel within a single module.
+        Mindset: It&lsquo;s important that each team conducts information
+        gathering to prevent the reinvention of the wheel within a single
+        module.
       </li>
       <li>
         Importance of a Platform (as Product) Team to correctly address which

@@ -12,13 +12,13 @@ import { Separator } from '@/components/ui/separator'
 import { MessageSquare, User } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 
-interface QAItem {
+type QAItem = {
   question: string
   answer: string
   takeaway: string
 }
 
-interface QADrawerProps {
+type QADrawerProps = {
   open: boolean
   onOpenChange: (open: boolean) => void
   questions: QAItem[]

@@ -75,14 +75,6 @@ export function IntroSlide() {
           </div>
         ))}
       </div>
-      <div className="grid gap-4 md:grid-cols-3 mt-12">
-        Speakers: Edoardo Dusi (bundlers), Luca Del Puppo (compiler), Leonardo
-        Montini (tanstack-router), Javonne Cameron (state management), Ludovico
-        Besana (testing), Yakitta (Form Performance)
-      </div>
-      <div className="grid gap-4 md:grid-cols-3 mt-12">
-        Master of Ceromonies: Giuseppe Funiciello
-      </div>
     </div>
   )
 }
